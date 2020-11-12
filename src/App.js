@@ -8,7 +8,7 @@ class App extends React.Component {
     this.state = {
       names: [],
       images: "",
-      id: []
+      id: ""
     };
   }
   componentDidMount() {
@@ -16,7 +16,7 @@ class App extends React.Component {
       .get("/services/catalog/v4/category/shop/new/all-new/index.json")
       .then((response) => {
         console.log(response);
-        console.log(response.data.groups);
+        console.log(response.data.groups[0].price.regular);
         this.setState({
           names: response.data.name,
           images: response.data.groups.images,
