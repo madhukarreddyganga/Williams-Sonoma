@@ -16,7 +16,7 @@ class App extends React.Component {
       .get("/services/catalog/v4/category/shop/new/all-new/index.json")
       .then((response) => {
         console.log(response);
-        console.log(response.data.id);
+        console.log(response.data.groups);
         this.setState({
           names: response.data.name,
           images: response.data.groups.images,
